@@ -20,8 +20,11 @@ function App() {
 
     setArticleTitle("");
     setArticleAuthor("");
-
-  }
+  };
+  const removeElem = (toRemove) => {
+    const newArray1 = activeArticles.filter((curItem) => curItem.id !== toRemove.id)
+    setActiveArticles(newArray1)
+  } 
 
   return (
     <>
@@ -30,9 +33,10 @@ function App() {
         {activeArticles.length > 0 ? (
           <div >
             {
-              activeArticles.map((curItem) => (<div>
+              activeArticles.map((curItem) => (<div key={curItem.id}>
                 <h4>{curItem.title}</h4>
                 <p>{curItem.author}</p>
+                <button onClick={() => {removeElem(curItem)}}>🗑️</button>
               </div>
               ))
             }
