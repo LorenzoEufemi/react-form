@@ -1,19 +1,5 @@
 import { useState } from "react";
 
-const articles = [
-  {
-    id: 1,
-    title: "Le sette meraviglie"
-  },
-  {
-    id: 2,
-    title: "Geronimo Stilton"
-  },
-  {
-    id: 3,
-    title: "Topolino"
-  }
-]
 
 function App() {
   const [activeArticles, setActiveArticles] = useState([]);
